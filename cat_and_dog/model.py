@@ -3,6 +3,7 @@ from torchvision import models
 
 from MyCNNNet import MyCNNNet
 from MyDNNNet import MyDNNNet
+from MyLSTMNet import MyLSTMNet
 from MyResNet34 import MyResNet34
 
 
@@ -28,7 +29,14 @@ def my_resnet_34():
     model.add_module('softmax', nn.Softmax(dim=-1))
     return model
 
+
 def my_dnnnet():
     model = MyDNNNet()
+    model.add_module('softmax', nn.Softmax(dim=-1))
+    return model
+
+
+def my_rnnnet():
+    model = MyLSTMNet()
     model.add_module('softmax', nn.Softmax(dim=-1))
     return model

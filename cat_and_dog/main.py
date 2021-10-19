@@ -19,7 +19,7 @@ if __name__ == '__main__':
     val_loader = DataLoader(MyData(VAL_PATH), batch_size=BATCH_SIZE, shuffle=True)
 
     # Build the model
-    model = my_dnnnet()
+    model = my_rnnnet()
 
     # Train the model
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
